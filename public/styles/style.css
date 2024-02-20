@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eee;
+  padding: 3rem;
+}
+
+h1 {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+
+header a:link,
+header a:visited {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.8rem;
+  transition: 0.3s all;
+}
+
+header a:hover,
+header a:active {
+  color: #777;
+}
+
+footer {
+  background-color: #eee;
+  display: flex;
+  margin-top: auto;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3rem;
+  font-size: 1.6rem;
+}
+.footer-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.footer-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.github-icon:link,
+.github-icon:visited {
+  font-size: 6rem;
+  color: #000;
+  transition: 0.3s all;
+}
+
+.github-icon:hover,
+.github-icon:active {
+  color: #777;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem;
+  background: rgb(170, 255, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(170, 255, 0, 1) 0%,
+    rgba(11, 121, 9, 1) 100%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background-color: #eee;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.post-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.post-desc h3 {
+  margin-bottom: 1rem;
+}
+
+.post-desc img {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 9px;
+}
+
+.post-additional {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-additional a:link,
+.post-additional a:visited {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+
+.post-additional a:hover,
+.post-additional a:active {
+  color: #777;
+}
