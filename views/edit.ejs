@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs") %>
+
+<section class="create-section">
+  <div class="form-container">
+    <h2>Change the post</h2>
+    <form action="/change/<%= pageNum %>" method="post">
+      <div>
+        <label for="title">Title</label>
+        <input
+          id="title"
+          name="title"
+          type="text"
+          maxlength="50"
+          value="<%= content[pageNum].title %>"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="description">Description</label>
+
+        <textarea
+          id="description"
+          name="description"
+          type="text"
+          maxlength="640"
+          required
+        >
+<%= content[pageNum].description %></textarea
+        >
+      </div>
+
+      <div>
+        <label for="image">Image</label>
+        <input
+          type="file"
+          accept="image/png, image/jpeg, image/jpg"
+          name="image"
+          id="image"
+          required
+        />
+      </div>
+
+      <div>
+        <input class="submit-button" type="submit" value="Change" />
+      </div>
+    </form>
+  </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

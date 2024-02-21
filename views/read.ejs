@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %> <% let postNum =
+page.split("/").reverse()[0] %>
+
+<section class="read-container">
+  <h2><%= content[postNum].title %></h2>
+  <img src="/images/img.jpg" alt="Post image" />
+  <div>
+    <p><%= content[postNum].description %></p>
+  </div>
+
+  <div class="buttons-container">
+    <a class="btn edit" href="/edit/<%= postNum %>">Edit</a>
+    <a class="btn delete" href="/delete/<%= postNum %>">Delete</a>
+  </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

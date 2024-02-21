@@ -46,7 +46,8 @@ header a:active {
 footer {
   background-color: #eee;
   display: flex;
-  margin-top: auto;
+
+  /* margin-top: auto; */
   align-items: center;
   justify-content: space-around;
   padding: 3rem;
@@ -77,9 +78,11 @@ footer {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3rem;
-  padding: 4rem;
+  grid-template-columns: repeat(3, 46rem);
+  grid-auto-rows: auto;
+  gap: 2rem;
+  padding: 2rem;
+  height: 200rem;
   background: rgb(170, 255, 0);
   background: linear-gradient(
     90deg,
@@ -89,51 +92,191 @@ main {
   );
 }
 
+/* Post */
+
 .post {
+  max-width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 3rem;
   background-color: #eee;
-  border-radius: 10px;
-  font-size: 1.8rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 9px;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.post img {
+  width: 100%;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
 }
 
 .post-desc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem 0;
-}
-
-.post-desc h3 {
-  margin-bottom: 1rem;
-}
-
-.post-desc img {
-  width: 100%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border-radius: 9px;
+  padding: 2rem;
+  max-width: 90%;
+  text-align: center;
+  font-size: 1.8rem;
+  word-wrap: break-word;
 }
 
 .post-additional {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: space-around;
+  font-size: 1.6rem;
 }
 
 .post-additional a:link,
 .post-additional a:visited {
   color: #000;
-  font-weight: 500;
-  text-decoration: none;
   transition: 0.3s all;
+  text-decoration: none;
 }
 
 .post-additional a:hover,
 .post-additional a:active {
   color: #777;
+}
+
+/* Create */
+
+.create-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgb(170, 255, 0);
+  background: linear-gradient(
+    90deg,
+    rgb(212, 255, 0) 0%,
+    rgb(9, 121, 22) 100%,
+    rgba(2, 0, 36, 1) 100%
+  );
+  padding: 3rem;
+  font-size: 2rem;
+}
+
+.form-container {
+  background-color: #eee;
+  margin: 6rem 0;
+  padding: 12rem;
+  border-radius: 9px;
+}
+
+.form-container h2 {
+  margin-bottom: 4rem;
+}
+
+.form-container div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+.form-container label {
+  margin-bottom: 0.8rem;
+}
+
+.form-container input {
+  width: 100%;
+}
+
+.form-container textarea {
+  height: 10rem;
+  border-radius: 9px;
+  resize: none;
+}
+
+.form-container form {
+  width: 40rem;
+}
+
+.submit-button {
+  border: none;
+  background-color: #0e243d;
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 9px;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #222;
+  color: white;
+}
+
+/* Read */
+
+.read-container {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 5rem;
+  align-items: center;
+  background-color: white;
+}
+
+.read-container img {
+  width: 600px;
+  border-radius: 9px;
+}
+
+.read-container h2 {
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+
+.read-container div {
+  width: 800px;
+}
+
+.read-container div p {
+  font-size: 1.8rem;
+}
+
+/* Buttons */
+
+.buttons-container {
+  width: 700px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn,
+.btn {
+  text-decoration: none;
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 600;
+  padding: 4rem 8rem;
+  border-radius: 9px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.edit:link,
+.edit:visited {
+  background-color: rgb(18, 97, 78);
+  transition: 0.3s all;
+}
+
+.edit:hover,
+.edit:active {
+  background-color: rgb(3, 36, 28);
+}
+
+.delete:link,
+.delete:visited {
+  background-color: rgb(139, 52, 18);
+  transition: 0.3s all;
+}
+
+.delete:hover,
+.delete:active {
+  background-color: rgb(112, 32, 0);
 }

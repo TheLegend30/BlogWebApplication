@@ -1,59 +1,38 @@
 <%- include("partials/header.ejs") %>
 
 <main>
+  <% if(locals.content.length > 0) { %> <% for(let i = 0; i < content.length;
+  i++) { %>
   <div class="post">
-    <div class="post-container">
-      <div class="post-desc">
-        <img src="images/img.jpg" alt="Some image" />
-        <h3>Post</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero omnis,
-          aperiam ut amet voluptate, doloribus sit nostrum aspernatur in esse
-          maiores inventore!
-        </p>
-      </div>
-      <div class="post-additional">
-        <p>Jan 01 2000</p>
-        <a href="#">See more ➡️</a>
-      </div>
+    <div>
+      <img src="/images/img.jpg" alt="Post image" />
+    </div>
+    <div class="post-desc">
+      <h3><%= content[i].title %></h3>
+      <p><%= content[i].description.substring(0,75) %>...</p>
+    </div>
+    <div class="post-additional">
+      <p><%= content[i].date %></p>
+      <a href="/read/<%= i %>">See more ➡️</a>
+    </div>
+  </div>
+  <% } %> <% } else { %>
+
+  <div class="post">
+    <div>
+      <img src="/images/img.jpg" alt="Post image" />
+    </div>
+    <div class="post-desc">
+      <h3>Hello!</h3>
+      <p>Create your first post! Click "New post" button in the top of page</p>
+    </div>
+    <div class="post-additional">
+      <p><%= new Date().toLocaleDateString("en-US")%></p>
+      <a href="#">See more ➡️</a>
     </div>
   </div>
 
-  <div class="post">
-    <div class="post-container">
-      <div class="post-desc">
-        <img src="images/img.jpg" alt="Some image" />
-        <h3>Post</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero omnis,
-          aperiam ut amet voluptate, doloribus sit nostrum aspernatur in esse
-          maiores inventore!
-        </p>
-      </div>
-      <div class="post-additional">
-        <p>Jan 01 2000</p>
-        <a href="#">See more ➡️</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="post">
-    <div class="post-container">
-      <div class="post-desc">
-        <img src="images/img.jpg" alt="Some image" />
-        <h3>Post</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero omnis,
-          aperiam ut amet voluptate, doloribus sit nostrum aspernatur in esse
-          maiores inventore!
-        </p>
-      </div>
-      <div class="post-additional">
-        <p>Jan 01 2000</p>
-        <a href="#">See more ➡️</a>
-      </div>
-    </div>
-  </div>
+  <% } %>
 </main>
 
 <%- include("partials/footer.ejs") %>
