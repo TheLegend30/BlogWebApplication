@@ -3,7 +3,7 @@
 <section class="create-section">
   <div class="form-container">
     <h2>Create new post</h2>
-    <form action="/submit" method="post">
+    <form action="/submit" method="post" enctype="multipart/form-data">
       <div>
         <label for="title">Title</label>
         <input id="title" name="title" type="text" maxlength="50" required />
@@ -23,13 +23,7 @@
 
       <div>
         <label for="image">Image</label>
-        <input
-          type="file"
-          accept="image/png, image/jpeg, image/jpg"
-          name="image"
-          id="image"
-          required
-        />
+        <input type="file" accept="image/*" name="image" id="image" required />
       </div>
 
       <div>

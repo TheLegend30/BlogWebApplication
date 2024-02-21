@@ -3,7 +3,7 @@ page.split("/").reverse()[0] %>
 
 <section class="read-container">
   <h2><%= content[postNum].title %></h2>
-  <img src="/images/img.jpg" alt="Post image" />
+  <img src="<%= content[postNum].image %>" alt="Post image" />
   <div>
     <p><%= content[postNum].description %></p>
   </div>

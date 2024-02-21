@@ -1,4 +1,5 @@
 import express from "express";
+import fileUpload from "express-fileupload";
 const app = express();
 const port = 3000;
 
@@ -13,8 +14,8 @@ class Post {
 
 let posts = [];
 
+app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.static("public"));
 
 app.listen(port, () => {
@@ -46,16 +47,28 @@ app.get("/edit/:id", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
-  posts.push(new Post(req.body.title, req.body.description, req.body.image));
+  const file = req.files.image;
+  file.mv("./public/images/" + posts.length + ".png");
+
+  posts.push(
+    new Post(
+      req.body.title,
+      req.body.description,
+      "/images/" + posts.length + ".png"
+    )
+  );
   res.redirect("/");
 });
 
 app.post("/change/:id", (req, res) => {
   let pageNum = req.params.id;
+  const file = req.files.image;
+  file.mv("./public/images/" + posts.length + ".png");
+
   posts[pageNum] = new Post(
     req.body.title,
     req.body.description,
-    req.body.image
+    "/images/" + posts.length + ".png"
   );
   res.redirect("/");
 });

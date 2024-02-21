@@ -108,6 +108,7 @@ main {
 
 .post img {
   width: 100%;
+  object-fit: cover;
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
 }

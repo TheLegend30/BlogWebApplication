@@ -3,7 +3,11 @@
 <section class="create-section">
   <div class="form-container">
     <h2>Change the post</h2>
-    <form action="/change/<%= pageNum %>" method="post">
+    <form
+      action="/change/<%= pageNum %>"
+      method="post"
+      enctype="multipart/form-data"
+    >
       <div>
         <label for="title">Title</label>
         <input
